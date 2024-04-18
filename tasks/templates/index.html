@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="{% static '/app/styles/reset.css' %}">
+    <link rel="stylesheet" href="{% static '/app/styles/styles_conf.css' %}">
+    
+</head>
+<header>
+    <div class="header__title">
+        <img class="header__logo" src="{% static '\app\img\logo_xadrez.png' %}" alt="Chess Logo">
+        <h1 class="header__title__text">Task Management System</h1>
+    </div>
+    </header>
+<body>
+    <nav class="sidebar">
+        <h1 class="sidebar__title">Menu</h1>
+        <ul class="sidebar__list">
+            <li class="sidebar__list__item"><a href="#" class="sidebar__list__item__link">Home</a></li>
+            <li class="sidebar__list__item"><a href="#" class="sidebar__list__item__link">About</a></li>
+            <li class="sidebar__list__item"><a href="#" class="sidebar__list__item__link">Services</a></li>
+            <li class="sidebar__list__item"><a href="#" class="sidebar__list__item__link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="task__container">
+        <ul class="task__list">
+            {% for task in tasks %}
+            <li class="task__list__item">
+                <strong>Name:</strong> {{ task.name }}<br>
+                <strong>Category:</strong> {{ task.category }}<br>
+                <strong>Start:</strong> {{ task.start }}<br>
+                <strong>Deadline:</strong> {{ task.deadline }}<br>
+                <strong>Status:</strong> {{ task.status }}<br>
+                <strong>AAP? </strong> {% if task.aap %}Sim{% else %}Não{% endif %}<br><br>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+
+
+</body>
+</html>

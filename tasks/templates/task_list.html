@@ -1,0 +1,19 @@
+
+{% load static %}
+{% block content %}
+<h1>Lista de Tarefas</h1>
+<h2>ola</h2>
+<h1>{{ tasks }}</h1>
+<ul>
+    {% for task in tasks %}
+    <li>
+        <strong>Name:</strong> {{ task.name }}<br>
+        <strong>Category:</strong> {{ task.category }}<br>
+        <strong>Start:</strong> {{ task.start }}<br>
+        <strong>Deadline:</strong> {{ task.deadline }}<br>
+        <strong>Status:</strong> {{ task.status }}<br>
+        <strong>AAP? </strong> {% if task.aap %}Sim{% else %}Não{% endif %}<br>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

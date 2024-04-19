@@ -23,20 +23,22 @@
             <li class="sidebar__list__item"><a href="#" class="sidebar__list__item__link">Home</a></li>
             <li class="sidebar__list__item"><a href="#" class="sidebar__list__item__link">About</a></li>
             <li class="sidebar__list__item"><a href="#" class="sidebar__list__item__link">Services</a></li>
-            <li class="sidebar__list__item"><a href="#" class="sidebar__list__item__link">Contact</a></li>
+            <li class="sidebar__list__item"><a href="/admin" class="sidebar__list__item__link">Admin</a></li>
         </ul>
     </nav>
 
     <div class="task__container">
         <ul class="task__list">
             {% for task in tasks %}
+            <h2>Task {{ forloop.counter }}</h2>
             <li class="task__list__item">
-                <strong>Name:</strong> {{ task.name }}<br>
-                <strong>Category:</strong> {{ task.category }}<br>
-                <strong>Start:</strong> {{ task.start }}<br>
-                <strong>Deadline:</strong> {{ task.deadline }}<br>
-                <strong>Status:</strong> {{ task.status }}<br>
-                <strong>AAP? </strong> {% if task.aap %}Sim{% else %}Não{% endif %}<br><br>
+                Name: {{ task.name }}<br>
+                Category: {{ task.category }}<br>
+                Start: {{ task.start }}<br>
+                Deadline: {{ task.deadline }}<br>
+                Status: {{ task.status }}<br>
+                AAP?  {% if task.aap %}Yes{% else %}No{% endif %}<br>
+                Days: {{ task.days }}<br><br>
             </li>
             {% endfor %}
         </ul>

@@ -11,6 +11,9 @@ def index(request):
     tasks = response.json() if response.status_code == 200 else []
     return render(request, 'index.html', {'tasks': tasks})
 
+def registration(request):
+    return render(request, 'registration.html')
+
 # API
 
 class dataTaskViewset(viewsets.ModelViewSet):

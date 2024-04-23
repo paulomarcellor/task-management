@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from tasks.views import index
+from tasks.views import index, registration
 from rest_framework.routers import DefaultRouter
 from tasks.views import dataTaskViewset, stepsTaskViewset
 
@@ -11,5 +11,6 @@ router.register('steps', stepsTaskViewset, basename='Steps')
 urlpatterns = [
     path('', index, name='Index'),
     path("admin/", admin.site.urls),
+    path('registration', registration, name='Registration'),
     path('api/', include(router.urls)),
 ]

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Moul&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --background-color: #ffffff;
@@ -12,6 +13,12 @@
 
     --gray-lines: #909090;
 
+    --gray-stroke: #9C9C9C;
+    
+    --white: #FFFFFF;
+
+    --blue-new: #423FE4;
+    --red-delete: #E43F3F;
 }
 
 body {
@@ -89,9 +96,141 @@ body {
     text-decoration: none;
 }
 
-.horizontal-line {
+/* REGISTRATION */
+
+.horizontal__line {
     height: 4px;
     background-color: var(--gray-lines); /* Cor da linha */
-    width: 70%; /* Largura desejada da linha */
+    width: 65%; /* Largura desejada da linha */
     margin: 10px 1.5em 10px 300px;
+}
+
+.content__buttons__registration {
+    margin: 10px 1.5em 10px 300px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.buttons__left {
+    margin: 1em 0 2.25em 0;
+    display: flex;
+    align-content: space-between;
+}
+
+.btn__select {
+    width: auto;
+    height: 40px;
+    margin-right: 1.25em;
+    border: 2px solid;
+    border-color: var(--gray-stroke);
+    border-radius: 5px;
+    font-family: var(--titles-sidebar-font);
+    font-weight: bold;
+    color: var(--gray-title-text);
+    text-align: left;
+    font-size: 18px;
+}
+
+.btn__select:last-child {
+    margin-right: 0; /* Remover o espaço à direita do último botão */
+}
+
+.btn__select__arrow__down {
+    margin-left: 10px;
+}
+
+.buttons__right {
+    display: flex;
+    margin: 1em 0 2.25em 7em;
+}
+
+.btn__search,
+.btn__new,
+.btn__delete {
+    width: 130px;
+    height: 40px;
+    margin-right: 1.25em;
+    border: 2px solid;
+    border-radius: 10px;
+    font-family: var(--titles-sidebar-font);
+    font-weight: bold;
+    color: var(--white);
+    text-align: center;
+    font-size: 18px;
+}
+
+.btn__search {
+    background-color: var(--gray-title-text);
+}
+
+.btn__new {
+    background-color: var(--blue-new);
+}
+
+.btn__delete {
+    background-color: var(--red-delete);
+}
+
+/* TABLE */
+
+.task__rectangle {
+    border: 2px solid var(--gray-lines);
+    margin: 10px 0 10px 300px;
+    width: 65%;
+    align-content: center;
+}
+
+.tasks__list__table {
+    width: 93.5%;
+    /* margin: 10px 1.5em 10px 300px; */
+    margin: 28px 32px 64px 32px;
+    border-collapse: collapse;
+    
+}
+.tasks__list__table__head__row__item,
+.tasks__list__table__body__item__id,
+.tasks__list__table__body__item__task,
+.tasks__list__table__body__item__status,
+.tasks__list__table__body__item__steps,
+.tasks__list__table__body__item__select {
+    border: 2px solid var(--gray-lines);
+    padding: 10px;
+    font-family: var(--titles-sidebar-font);
+    font-size: 18px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tasks__list__table__head__row__item {
+    font-weight: bold;
+    color: #707070;
+    font-size: 20px;
+    border: none;
+}
+
+.tasks__list__table__body__item__id {
+    width: 1.5em;
+    
+}
+
+/* .tasks__list__table__body__item__task {
+    width: 30em;
+} */
+
+.tasks__list__table__body__item__status {
+    width: 8em;
+}
+
+.tasks__list__table__body__item__steps {
+    width: 3em;
+}
+
+.tasks__list__table__body__item__select {
+    width: 1em;
+}
+
+.selection_checkbox {
+    width: 16px;
+    height: 16px;
 }

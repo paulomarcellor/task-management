@@ -12,7 +12,8 @@ def index(request):
     return render(request, 'index.html', {'tasks': tasks})
 
 def registration(request):
-    return render(request, 'registration.html')
+    fields = ["ID", "Task", "Status", "Steps", ""]
+    return render(request, 'registration.html', {'fields': fields})
 
 # API
 

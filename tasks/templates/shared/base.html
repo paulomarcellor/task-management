@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="{% static '/app/styles/styles_conf.css' %}">
     
 </head>
+<header>
     {% include 'partials/top.html' %}
+</header>
+{% include 'partials/sidebar.html' %}
 <body>
-    {% include 'partials/sidebar.html' %}
     {% block content %}{% endblock %}
 </body>
 </html>

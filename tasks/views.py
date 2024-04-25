@@ -12,8 +12,11 @@ def index(request):
     return render(request, 'index.html', {'tasks': tasks})
 
 def registration(request):
+    api_url = "http://127.0.0.1:8000/api/datatasks/"
+    response = requests.get(api_url)
+    tasks = response.json() if response.status_code == 200 else []
     fields = ["ID", "Task", "Status", "Steps", ""]
-    return render(request, 'registration.html', {'fields': fields})
+    return render(request, 'registration.html', {'fields': fields, 'tasks': tasks})
 
 # API
 

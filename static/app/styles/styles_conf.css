@@ -23,6 +23,7 @@
 
 body {
     background-color: var(--background-color);
+    padding-left: 5%;
 }
 
 /* TOP BAR */
@@ -138,11 +139,13 @@ body {
 
 .btn__select__arrow__down {
     margin-left: 10px;
+    width: auto;
+    height: auto;
 }
 
 .buttons__right {
     display: flex;
-    margin: 1em 0 2.25em 7em;
+    padding: 1em 10% 2.25em 250px;
 }
 
 .btn__search,
@@ -172,6 +175,18 @@ body {
     background-color: var(--red-delete);
 }
 
+@media screen and (max-width: 1750px) {
+    .btn__select {
+        font-size: 14px;
+        width: auto;
+    }
+
+    .btn__select__arrow__down {
+        width: auto;
+        height: auto;
+    }
+}
+
 /* TABLE */
 
 .task__rectangle {
@@ -182,6 +197,7 @@ body {
 }
 
 .tasks__list__table {
+    display: table;
     width: 93.5%;
     /* margin: 10px 1.5em 10px 300px; */
     margin: 28px 32px 64px 32px;
@@ -214,10 +230,6 @@ body {
     
 }
 
-/* .tasks__list__table__body__item__task {
-    width: 30em;
-} */
-
 .tasks__list__table__body__item__status {
     width: 8em;
 }
@@ -233,4 +245,60 @@ body {
 .selection_checkbox {
     width: 16px;
     height: 16px;
+}
+
+.popup__steps {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    /* z-index: 9999; */
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+/* FORM */
+
+.form__newtask {
+    display: none;
+    max-width: 500px;
+    margin: 2em auto 10em auto;
+}
+.form__newtask__label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form__newtask__input[type="text"],
+.form__newtask__input[type="date"],
+.form__newtask__select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.form__newtask__input[type="checkbox"] {
+    margin-right: 5px;
+}
+.form__newtask__input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.form__newtask__input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.success-message {
+    color: green;
+    margin-top: 10px;
 }

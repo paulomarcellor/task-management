@@ -1,0 +1,12 @@
+{% load static %}
+<div class="popup__task">
+    <h1>New Task</h1>
+
+    <form method="post" class="form__newtask" id="form__newtask__id">
+        {% csrf_token %}
+        {{ taskform.as_p }}
+        <input class="form__newtask__input" type="submit" value="Submit">
+    </form>
+
+    <span class="close__popup__task">CLOSE</span>
+</div>

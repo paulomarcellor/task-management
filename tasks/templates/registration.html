@@ -24,7 +24,7 @@
                     <td class="tasks__list__table__body__item__id"> {{ task.id }} </td>
                     <td class="tasks__list__table__body__item__task">{{ task.name }}</td>
                     <td class="tasks__list__table__body__item__status">{{ task.status }}</td>
-                    <td class="tasks__list__table__body__item__steps">5</td>
+                    <td class="tasks__list__table__body__item__steps">5 <button class="tasks__list__table__body__item__steps__addstep" id="tasks__list__table__body__item__steps__addstep__id">+</button></td>
                     <td class="tasks__list__table__body__item__select"><input type="checkbox" id="select__for__delete" class="selection_checkbox"></td>
                 </tr>
                 {% endfor %}
@@ -33,38 +33,9 @@
     </div>
 </div>
 {% include 'popup_steps.html' %}
-
-<!-- FORM -->
-
-<form id="task-form" method="post" class="form__newtask">
-    {% csrf_token %}
-    <label for="name" class="form__newtask__label">Name:</label>
-    <input type="text" id="name" name="name" required class="form__newtask__input">
-
-    <label for="category" class="form__newtask__label">Category:</label>
-    <input type="text" id="category" name="category" required class="form__newtask__input">
-
-    <label for="start" class="form__newtask__label">Start Date:</label>
-    <input type="date" id="start" name="start" required class="form__newtask__input">
-
-    <label for="deadline" class="form__newtask__label">Deadline:</label>
-    <input type="date" id="deadline" name="deadline" required class="form__newtask__input">
-
-    <label for="status" class="form__newtask__label">Status:</label>
-    <select id="status" name="status" required class="form__newtask__select">
-        <option value="Pending">Pending</option>
-        <option value="In Progress">In Progress</option>
-        <option value="Completed">Completed</option>
-    </select>
-
-    <label for="aap" class="form__newtask__label">AAP:</label>
-    <input type="checkbox" id="aap" name="aap" class="form__newtask__input">
-
-    <input type="submit" value="Submit" class="form__newtask__input">
-    <div class="success-message" style="display: none;">Task submitted successfully!</div>
-</form>
+{% include 'popup_task.html' %}
 
 <script src="{% static '/scripts/showform.js' %}"></script>
 <script src="{% static '/scripts/newtask.js' %}"></script>
-<script src="{% static '/scripts/popup.js' %}"></script>
+<script src="{% static '/scripts/popup__newstep.js' %}"></script>
 {% endblock %}

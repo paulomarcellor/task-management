@@ -242,11 +242,23 @@ body {
     width: 1em;
 }
 
+.tasks__list__table__body__item__steps__addstep {
+    color: var(--gray-title-text);
+    background-color: var(--gray-sidebar);
+    border: 1px solid var(--gray-lines);
+    border-radius: 5px;
+    /* width: 10px; */
+    align-content: center;
+}
+
 .selection_checkbox {
     width: 16px;
     height: 16px;
 }
 
+
+
+.popup__task,
 .popup__steps {
     display: none;
     position: fixed;
@@ -257,8 +269,8 @@ body {
     padding: 20px;
     border: 1px solid #ccc;
     /* z-index: 9999; */
-    width: 500px;
-    height: 500px;
+    /* width: 500px;
+    height: 500px; */
     border-radius: 20px;
 }
 
@@ -296,9 +308,44 @@ body {
 }
 .form__newtask__input[type="submit"]:hover {
     background-color: #45a049;
+    padding: 20px;
+    align-self: right;
 }
 
 .success-message {
     color: green;
     margin-top: 10px;
+}
+
+.step__form {
+    margin: 20px;
+}
+
+.step__form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.step__form input[type="text"],
+.step__form input[type="date"],
+.step__form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.step__form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+.step__form button:hover {
+    background-color: #45a049;
 }

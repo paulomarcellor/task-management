@@ -2,8 +2,9 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from tasks.models import dataTask, stepsTask
 from tasks.serializers import dataTaskSerializer, stepsTaskSerializer
-
 import requests
+from tasks.forms import taskForm, stepsTaskForm
+
 
 def index(request):
     api_url = "http://127.0.0.1:8000/api/datatasks/"
@@ -16,7 +17,9 @@ def registration(request):
     response = requests.get(api_url)
     tasks = response.json() if response.status_code == 200 else []
     fields = ["ID", "Task", "Status", "Steps", ""]
-    return render(request, 'registration.html', {'fields': fields, 'tasks': tasks})
+    stepForm = stepsTaskForm
+    mainForm = taskForm
+    return render(request, 'registration.html', {'fields': fields, 'tasks': tasks, 'stepform':stepForm, 'taskform':mainForm})
 
 # API
 

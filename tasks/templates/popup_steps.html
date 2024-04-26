@@ -2,5 +2,12 @@
 {% load static %}
 <div class="popup__steps">
     <h1>Steps</h1>
-    <span class="close__popup">CLOSE</span>
+
+    <form method="post" class="step__form" onsubmit="return save_and_post_to_api()">
+        {% csrf_token %}
+        {{ stepform.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+
+    <span class="close__popup__step">CLOSE</span>
 </div>

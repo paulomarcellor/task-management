@@ -1,4 +1,4 @@
-document.getElementById('task-form').addEventListener('submit', function(event) {
+document.getElementById('form__newtask__id').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita o envio padrão do formulário
 
     var form = this;
